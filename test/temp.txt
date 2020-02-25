@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" 
+    xmlns:agfa="http://www.agfa.com/w3c/gs/jdf/agfaextensions.xsd" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Activation="Active" DescriptiveName="12345" ID="12345" JobID="12345" JobPartID="12345" Status="Ready" Type="Product" Version="1.5">
+    <Comment AgentName="PIB" DescriptiveName="FullSheetPdf of Gang Job 12345" />
+    <AuditPool>
+        <Created AgentName="PIB" ID="CreatedID" TimeStamp="2020-02-25T14:59:49Z" />
+    </AuditPool>
+    <ResourcePool>
+        <NodeInfo Class="Parameter" ID="NodeInfoID" NodeStatus="Ready" Start="2020-02-25T14:59:49Z" Status="Available">
+            <Employee PersonalID="tester" />
+        </NodeInfo>
+        <Component Amount="1000" Class="Quantity" ComponentType="FinalProduct" Dimensions="2494.488188976378 1785.8267716535433 0.0" ID="ComponentID-12345" ReaderPageCount="2" Status="Unavailable" SurfaceCount="2" />
+        <ColorPool Class="Parameter" DescriptiveName="Colors for Job" ID="ColorPoolID" Locked="false" Status="Available">
+            <Color CMYK="1 0 0 0" Name="Cyan" />
+            <Color CMYK="0 1 0 0" Name="Magenta" />
+            <Color CMYK="0 0 1 0" Name="Yellow" />
+            <Color CMYK="0 0 0 1" Name="Black" />
+        </ColorPool>
+        <!-- (Q) can this be left out? -->
+        <BindingIntent BindingOrder="None" Class="Intent" ID="BindingIntentID" Status="Available">
+            <BindingSide Actual="Left" DataType="EnumerationSpan" Preferred="Left" />
+            <BindingType Actual="None" DataType="EnumerationSpan" Preferred="None" />
+        </BindingIntent>
+        <Media Class="Consumable" DescriptiveName="Media Proof" ID="MediaProofID" MediaType="Paper" ProductID="MediaProofID" Status="Available" />
+        <Media Class="Consumable" DescriptiveName="Plates for Job" ID="MediaPlateID" MediaType="Plate" Status="Available" />
+        <Media Class="Consumable" DescriptiveName="PrintingPaper" ID="MediaPrintingPaperID" MediaType="Paper" PartIDKeys="SignatureName SheetName" Status="Available">
+            <Media SignatureName="SignatureID_12345">
+                <Media Brand="" DescriptiveName="Grade 1" Dimension="2494.488188976378 1785.8267716535433" Grade="1" GrainDirection="YDirection" ProductID="Paper_SheetID" SheetName="SheetID_12345" Thickness="85" Weight="90" />
+            </Media>
+        </Media>
+        <ColorantControl Class="Parameter" ID="ColorantControlID" PartIDKeys="SignatureName SheetName Side" PartUsage="Implicit" Status="Available">
+            <ColorPoolRef rRef="ColorPoolID" />
+            <!-- begin editing -->
+            <ColorantControl ProcessColorModel="DeviceCMYK" SignatureName="SignatureID_12345">
+                <ColorantControl SheetName="SheetID_12345">
+                    <ColorantControl Side="Front">
+                        <ColorantParams />
+                        <ColorantOrder>
+                            <SeparationSpec Name="Cyan" />
+                            <SeparationSpec Name="Magenta" />
+                            <SeparationSpec Name="Yellow" />
+                            <SeparationSpec Name="Black" />
+                        </ColorantOrder>
+                    </ColorantControl>
+                    <ColorantControl ProcessColorModel="DeciveCMYK" Side="Back">
+                        <ColorantParams />
+                        <ColorantOrder>
+                            <SeparationSpec Name="Cyan" />
+                            <SeparationSpec Name="Magenta" />
+                            <SeparationSpec Name="Yellow" />
+                            <SeparationSpec Name="Black" />
+                        </ColorantOrder>
+                    </ColorantControl>
+                </ColorantControl>
+            </ColorantControl>
+            <!-- end editing -->
+        </ColorantControl>
+        <Layout Class="Parameter" DescriptiveName="LayoutID-12345" ID="LayoutID" PartIDKeys="SignatureName SheetName Side" Status="Unavailable">
+            <Layout SignatureName="SignatureID_12345">
+                <Layout SheetName="SheetID_12345">
+                    <Layout Side="Front" />
+                    <Layout Side="Back" />
+                </Layout>
+            </Layout>
+        </Layout>
+        <CustomerInfo Class="Parameter" CustomerID="CustomerID" ID="CustomerInfoID" Status="Available" />
+        <Device Class="Implementation" DescriptiveName="" DeviceID="pd1" ID="DeviceID_Ryobi 4/4" Status="Available" />
+        <ExposedMedia Class="Handling" DescriptiveName="Imposition Proof" ID="ExposedMediaImpoProofID" PartIDKeys="SignatureName SheetName Side" PartUsage="Explicit" Status="Unavailable">
+            <MediaRef rRef="MediaProofID" />
+            <ExposedMedia SignatureName="SignatureID_12345">
+                <ExposedMedia SheetName="SheetID_12345">
+                    <ExposedMedia Side="Front" />
+                    <ExposedMedia Side="Back" />
+                </ExposedMedia>
+            </ExposedMedia>
+        </ExposedMedia>
+        <ExposedMedia Class="Handling" ID="ExposedMediaID" PartIDKeys="SignatureName SheetName Side Separation" PartUsage="Explicit" Status="Unavailable">
+            <ExposedMedia SignatureName="SignatureID_12345">
+                <ExposedMedia SheetName="SheetID_12345">
+                    <MediaRef rRef="MediaPlateID" />
+                    <ExposedMedia Side="Front">
+                        <ExposedMedia ProductID="1" Separation="Cyan" />
+                        <ExposedMedia ProductID="2" Separation="Magenta" />
+                        <ExposedMedia ProductID="3" Separation="Yellow" />
+                        <ExposedMedia ProductID="4" Separation="Black" />
+                    </ExposedMedia>
+                    <ExposedMedia Side="Back">
+                        <ExposedMedia ProductID="5" Separation="Cyan" />
+                        <ExposedMedia ProductID="6" Separation="Magenta" />
+                        <ExposedMedia ProductID="7" Separation="Yellow" />
+                        <ExposedMedia ProductID="8" Separation="Black" />
+                    </ExposedMedia>
+                </ExposedMedia>
+            </ExposedMedia>
+        </ExposedMedia>
+        <RunList Class="Parameter" ID="sharedRunListOutID" Status="Unavailable" />
+        <RunList Class="Parameter" ID="sharedRunListInID" PartIDKeys="Run" Status="Available">
+            <RunList Pages="0" Run="0">
+                <LayoutElement>
+                    <FileSpec MimeType="application/pdf" URL="12345.pdf" />
+                </LayoutElement>
+            </RunList>
+            <RunList Pages="1" Run="1">
+                <LayoutElement>
+                    <FileSpec MimeType="application/pdf" URL="12345.pdf" />
+                </LayoutElement>
+            </RunList>
+        </RunList>
+        <Assembly BindingSide="Left" Class="Parameter" ID="AssemblyID" Order="None" Status="Available">
+            <AssemblySection AssemblyIDs="AssemblyIDs_12345" />
+        </Assembly>
+        <BinderySignature BinderySignatureType="Fold" Class="Parameter" DescriptiveName="Bindery Signature of 12345" FoldCatalog="F2-1" ID="BinderySignature-12345" Status="Available" />
+        <StrippingParams Class="Parameter" ID="StrippingParamsID" PartIDKeys="SignatureName SheetName BinderySignatureName" Status="Available">
+            <StrippingParams SignatureName="SignatureID_12345">
+                <StrippingParams AssemblyIDs="AssemblyIDs_12345" SheetName="SheetID_12345" WorkStyle="Perfecting">
+                    <MediaRef rRef="MediaPrintingPaperID">
+                        <Part SheetName="SheetID_12345" SignatureName="SignatureID_12345" />
+                    </MediaRef>
+                    <DeviceRef rRef="DeviceID_Ryobi 4/4" />
+                    <StrippingParams AssemblyIDs="AssemblyIDs_12345" BinderySignatureName="BinderySignature-12345">
+                        <BinderySignatureRef rRef="BinderySignature-12345" />
+                        <StripCellParams BackOverfold="0" BleedFace="0" BleedFoot="0" BleedHead="0" BleedSpine="0" CutWidthFoot="0" CutWidthHead="0" FrontOverfold="0" MillingDepth="0" Spine="0" TrimFace="0" TrimFoot="0" TrimHead="0" TrimSize="2494.488188976378 1785.8267716535433" />
+                        <Position AbsoluteBox="-0 -0 2494.488188976378 1785.8267716535433" MarginBottom="0.0" MarginLeft="0.0" MarginRight="0.0" MarginTop="0.0" Orientation="Rotate0" />
+                    </StrippingParams>
+                </StrippingParams>
+            </StrippingParams>
+        </StrippingParams>
+        <RunList Class="Parameter" ID="SharedRunListOutID_2" Status="Unavailable" />
+        <Component Amount="2000" Class="Quantity" ComponentType="PartialProduct" Dimensions="2494.488188976378 1785.8267716535433 0.0" ID="ComponentPlateID_12345" ProductType="Flatwork" Status="Unavailable" />
+    </ResourcePool>
+    <ResourceLinkPool>
+        <BindingIntentLink Usage="Input" rRef="BindingIntentID" />
+        <ComponentLink Amount="1000" Usage="Output" rRef="ComponentID-12345" />
+        <NodeInfoLink Usage="Input" rRef="NodeInfoID" />
+        <CustomerInfoLink Usage="Input" rRef="CustomerInfoID" />
+        <ComponentLink Usage="Input" rRef="ComponentPlateID_12345" />
+    </ResourceLinkPool>
+    <JDF Category="MISPRE.PrePressPreparation" DescriptiveName="PrePressPreparation shared" ID="SharedPrePressPreparationID" JobPartID="PrePressPreparationshared" Status="Waiting" Type="ProcessGroup" Types="PrePressPreparation" xsi:type="ProcessGroup">
+        <ResourceLinkPool>
+            <RunListLink ProcessUsage="Document" Usage="Input" rRef="sharedRunListInID" />
+            <RunListLink ProcessUsage="Document" Usage="Output" rRef="sharedRunListOutID" />
+        </ResourceLinkPool>
+    </JDF>
+    <JDF Category="MISPRE.ImpositionPreparation" DescriptiveName="ImpositionPreparation shared" ID="SharedImpositionPreparationID" JobPartID="ImpositionPreparationshared" Status="Waiting" Type="ProcessGroup" Types="ImpositionPreparation">
+        <ResourceLinkPool>
+            <RunListLink ProcessUsage="Marks" Usage="Output" rRef="SharedRunListOutID_2" />
+            <StrippingParamsLink Usage="Input" rRef="StrippingParamsID" />
+            <AssemblyLink Usage="Input" rRef="AssemblyID" />
+            <LayoutLink Usage="Output" rRef="LayoutID" />
+        </ResourceLinkPool>
+    </JDF>
+    <JDF DescriptiveName="Gang Job 12345" ID="12345" JobPartID="12345" Status="Waiting" Type="Product">
+        <ResourceLinkPool>
+            <LayoutIntentLink Usage="Input" rRef="LayoutIntentID_12345" />
+            <FoldingIntentLink Usage="Input" rRef="FoldingIntentID_12345" />
+            <ComponentLink Usage="Output" rRef="ComponentPlateID_12345" />
+            <MediaIntentLink Usage="Input" rRef="MediaIntentID_12345" />
+            <ColorIntentLink Usage="Input" rRef="ColorIntentID_12345" />
+        </ResourceLinkPool>
+        <ResourcePool>
+            <LayoutIntent Class="Intent" ID="LayoutIntentID_12345" Sides="TwoSidedHeadToHead" Status="Available">
+                <Pages Actual="2" DataType="IntegerSpan" Preferred="2" />
+                <Dimensions Actual="2494.488188976378 1785.8267716535433" DataType="XYPairSpan" Preferred="2494.488188976378 1785.8267716535433" />
+            </LayoutIntent>
+            <FoldingIntent Class="Intent" ID="FoldingIntentID_12345" Status="Available">
+                <FoldingCatalog Actual="F2-1" DataType="NameSpan" Preferred="F2-1" />
+            </FoldingIntent>
+            <MediaIntent Class="Intent" ID="MediaIntentID_12345" Status="Available">
+                <MediaType DataType="EnumerationSpan" Preferred="Paper" />
+                <Weight Actual="90" DataType="NumberSpan" Preferred="90" />
+                <Thickness Actual="85" DataType="NumberSpan" Preferred="85" />
+                <StockBrand Actual="" DataType="StringSpan" Preferred="" />
+                <Grade Actual="1" DataType="IntegerSpan" Preferred="1" />
+            </MediaIntent>
+            <ColorIntent Class="Intent" ID="ColorIntentID_12345" Status="Available">
+                <ColorPoolRef rRef="ColorPoolID" />
+                <ColorsUsed>
+                    <SeparationSpec Name="Cyan" />
+                    <SeparationSpec Name="Magenta" />
+                    <SeparationSpec Name="Yellow" />
+                    <SeparationSpec Name="Black" />
+                </ColorsUsed>
+            </ColorIntent>
+        </ResourcePool>
+        <JDF Category="PrePress" DescriptiveName="Prepress of Gang Job 12345" ID="PrePressID_12345" JobPartID="JobPartPrepressID_12345" Status="Waiting" Type="ProcessGroup">
+            <ResourceLinkPool />
+            <ResourcePool>
+                <InterpretingParams Class="Parameter" ID="InterpretingParamsID_12345" PartIDKeys="SignatureName SheetName" Status="Available" />
+            </ResourcePool>
+            <JDF Category="MISPRE.ImpositionProofing" DescriptiveName="ImpositionProofing" ID="ImpositionProofingID_12345" JobPartID="ImpositionProofingID_12345" Status="Waiting" Type="ProcessGroup" Types="Imposition ProofImaging">
+                <ResourceLinkPool>
+                    <RunListLink CombinedProcessIndex="0" ProcessUsage="Document" Usage="Input" rRef="sharedRunListOutID" />
+                    <RunListLink ProcessUsage="Marks" Usage="Input" rRef="SharedRunListOutID_2" />
+                    <MediaLink Usage="Input" rRef="MediaProofID" />
+                    <LayoutLink Usage="Input" rRef="LayoutID">
+                        <Part SheetName="SheetID_12345" SignatureName="SignatureID_12345" />
+                    </LayoutLink>
+                    <ExposedMediaLink Usage="Output" rRef="ExposedMediaImpoProofID">
+                        <Part SheetName="SheetID_12345" SignatureName="SignatureID_12345" />
+                    </ExposedMediaLink>
+                    <ColorantControlLink Usage="Input" rRef="ColorantControlID">
+                        <Part SheetName="SheetID_12345" SignatureName="SignatureID_12345" />
+                    </ColorantControlLink>
+                </ResourceLinkPool>
+            </JDF>
+            <JDF Category="MISPRE.PlateMaking" DescriptiveName="PlateMaking of Gang Job 12345" ID="PlateMakingID_12345" JobPartID="PlateMakingID_12345" Status="Waiting" Type="ProcessGroup" Types="Imposition RIPing ImageSetting">
+                <ResourceLinkPool>
+                    <RunListLink CombinedProcessIndex="0" ProcessUsage="Document" Usage="Input" rRef="sharedRunListOutID" />
+                    <RunListLink ProcessUsage="Marks" Usage="Input" rRef="SharedRunListOutID_2" />
+                    <InterpretingParamsLink Usage="Input" rRef="InterpretingParamsID_12345" />
+                    <MediaLink Usage="Input" rRef="MediaPlateID" />
+                    <LayoutLink Usage="Input" rRef="LayoutID">
+                        <Part SheetName="SheetID_12345" SignatureName="SignatureID_12345" />
+                    </LayoutLink>
+                    <ExposedMediaLink Amount="1" Usage="Output" rRef="ExposedMediaID">
+                        <Part SheetName="SheetID_12345" SignatureName="SignatureID_12345" />
+                    </ExposedMediaLink>
+                    <ColorantControlLink Usage="Input" rRef="ColorantControlID">
+                        <Part SheetName="SheetID_12345" SignatureName="SignatureID_12345" />
+                    </ColorantControlLink>
+                </ResourceLinkPool>
+            </JDF>
+        </JDF>
+    </JDF>
+</JDF>

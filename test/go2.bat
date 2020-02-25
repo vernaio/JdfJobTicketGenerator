@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -d @gangJobEvent.json -X POST http://192.168.0.241:4202/json/12345 >>temp.txt

@@ -1,0 +1,12 @@
+html,body{
+	font-family: 'Arial', sans-serif;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+td{
+	font-size: 0.9rem;
+	background-color: #eee;
+	color: #555;
+	padding: 2px 5px;
+}
